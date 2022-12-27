@@ -252,6 +252,7 @@ from matplotlib.backend_bases import ShowBase, Event
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.mathtext import MathTextParser
 from matplotlib import rcParams
+import matplotlib as mpl
 from hashlib import md5
 from matplotlib import _path
 
@@ -896,7 +897,7 @@ class NavigationToolbar2Kivy(NavigationToolbar2):
            added with a specific behavior given by a callback. The buttons
            properties are given by matplotlib.
         '''
-        basedir = os.path.join(rcParams['datapath'], 'images')
+        basedir = os.path.join(mpl.get_data_path(), 'images')
         actionview = ActionView()
         actionprevious = ActionPrevious(title="Navigation", with_previous=False)
         actionoverflow = ActionOverflow()
